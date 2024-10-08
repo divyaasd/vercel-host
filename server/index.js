@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.use(cors(
     {
-        origin: 'https:/mern-site.vercel.app', // Replace with your React app's Vercel URL
+        origin: 'https://mern-site-five.vercel.app', // Replace with your React app's Vercel URL
         methods: ['GET', 'POST', 'PUT', 'DELETE'],         
         credentials: true                                  
       }
