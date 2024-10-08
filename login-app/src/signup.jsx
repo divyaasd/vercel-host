@@ -12,6 +12,7 @@ function Sign() {
     const handleSubmit=(e)=>{
         const form=document.querySelector('form')
         e.preventDefault()
+        axios.defaults.withCredentials=true;
         axios.post('https://mern-site-five.vercel.app/register',{name,email,password})
         .then(result=>{console.log(result)
         navigate('/login')
