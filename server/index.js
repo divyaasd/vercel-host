@@ -8,9 +8,15 @@ const app=express()
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors(
+    {
+        origin: 'https://your-frontend-domain.vercel.app', // Replace with your React app's Vercel URL
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],         
+        credentials: true                                  
+      }
+))
 
-mongoose.connect('mongodb://localhost:27017/registration')
+mongoose.connect('mongodb+srv://divyaas340:PSLBhsZVzRKOYJB3@cluster0.udhp7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
 app.post('/register',(req,res)=>{
     empModel.create(req.body)
